@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="styleTwo.css">
+</head>
+
+<body>
+    <section>
+        <div class="global">
+            <h1>This Game</h1>
+            <div class="src-word">
+                <p>The word is <span id="word"></span></p>
+            </div>
+            <div class="box">
+                <input type="text" id="traduction" placeholder="Enter your translation">
+                <button id="enter-traduction">Submit</button>
+            </div>
+            <div class="correct">
+                <p>correct Translation: <span id="correct-translation"></span></p>
+            </div>
+
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="progress">Question: <span id="question-number">0</span>
+            </div>
+            <button id="next-question">Next Question</button>
+        </div>
+    </section>
+
+    <script>
+        var words = {
+            "words": [
+                {
+                    "source": "Hello",
+                    "translation": "Bonjour"
+                },
+                {
+                    "source": "Goodbye",
+                    "translation": "Au revoir"
+                },
+                {
+                    "source": "Thank you",
+                    "translation": "Merci"
+                },
+                {
+                    "source": "Yes",
+                    "translation": "Oui"
+                },
+                {
+                    "source": "No",
+                    "translation": "Non"
+                },
+                {
+                    "source": "Please",
+                    "translation": "S'il vous plaît"
+                },
+                {
+                    "source": "Sorry",
+                    "translation": "Désolé"
+                },
+                {
+                    "source": "Excuse me",
+                    "translation": "Excusez-moi"
+                },
+                {
+                    "source": "I love you",
+                    "translation": "Je t'aime"
+                },
+                {
+                    "source": "Good morning",
+                    "translation": "Bonjour"
+                }
+            ]
+        };
+
+
+        const sourceWord = document.getElementById("word");
+        const resultats = document.getElementById("correct-translation");
+        //first function
+        function displayRandomWord() {
+            const randomIndex = Math.floor(Math.random() * words.words.length);
+            const randomWord = words.words[randomIndex].source;
+            sourceWord.textContent = randomWord;
+        }
+        //secind function
+        document.getElementById("enter-traduction").addEventListener("click", submitTranslation);
+        function submitTranslation() {
+            let correctTraduction;
+            words.words.forEach(word => {
+                if (word.source === sourceWord.textContent) {
+                    correctTraduction = word.translation;
+                }
+            });
+            const userTranslation = document.getElementById("traduction").value;
+            let message;
+            if (userTranslation.toLowerCase() === correctTraduction.toLowerCase()) {
+                message = "Great!";
+                incrementScore();
+            } else {
+                message = `Wrong! the answear is:  ${correctTraduction}`;
+            }
+
+            resultats.textContent = message;
+        }
+        // third function
+        var maxAttempts = 10;
+        var attempts = 0;
+
+        var numQuestion = document.getElementById("question-number");
+        var userInputElement = document.getElementById("traduction");
+        var resultatss = document.getElementById("correct-translation");
+        var nextQuestionButton = document.getElementById("next-question");
+
+        nextQuestionButton.addEventListener("click", nextQuestion);
+
+        function nextQuestion() {
+            attempts++;
+            numQuestion.textContent = attempts;
+            userInputElement.value = "";
+            resultatss.textContent = "";
+
+            if (attempts >= maxAttempts) {
+                nextQuestionButton.disabled = true;
+                nextQuestionButton.textContent = "No more attempts";
+                setTimeout(function () {
+                    window.location.href = "last.html";
+                }, 1000);
+            }
+
+            displayRandomWord();
+        }
+
+        var score = 0;
+
+        function incrementScore() {
+            score += 10;
+            document.getElementById("score").textContent = score;
+        }
+
+
+
+        displayRandomWord();
+        // document.getElementById("enter-traduction").addEventListener("click", submitTranslation);
+    </script>
+    </script>
+</body>
+
+</html>

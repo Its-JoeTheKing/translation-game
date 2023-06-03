@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.global {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.src-word {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.src-word p {
+    font-size: 18px;
+    color: #666;
+}
+
+.src-word span {
+    font-weight: bold;
+}
+
+.box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.box input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.box button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.correct {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Correct p {
+    font-size: 18px;
+    color: #666;
+}
+
+.score {
+    font-size: 24px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.progress {
+    font-size: 18px;
+    color: #666;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#next-question {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+#next-question:hover {
+    background-color: #555;
+}
