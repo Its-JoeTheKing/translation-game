@@ -4,11 +4,15 @@ html {
     margin: 0;
 }
 body {
-    min-height: 100%;
+    height: 100%;
     background: url("./images/bg.jpg") no-repeat;
     background-size: cover;
     background-position-y: 70%;
     margin: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 .model {
     position: fixed;
@@ -56,12 +60,109 @@ body {
 .story h1 {
     margin: 5px;
     font-family: "Poppins";
-    /* color: hsl(221, 100%, 44%); */
     color: white;
     letter-spacing: 1px;
     text-shadow: 0px 0px 2px hsl(221, 100%, 44%);
 }
+.cont {
+    width: 70%;
+    height: 40%;
+    margin-top: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    background: hsl(209,2,55);
+}
+.s1 {
+    width: 50%;
+    height: 100%;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter";
+    font-size: 30px;
+    position: relative;
+}
+.s2 {
+    width: 50%;
+    height: 100%;
+    background: white;
+    border-radius: 5px;
+    position: relative;
+}
+.cont button {
+    height: 150px;
+    width: 150px;
+    background: linear-gradient(to right bottom, orange,red);
+    border-radius: 50%;
+    align-self: center;
+    border: 10px solid #7cbcfc;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -75px;
+    font-family: "Poppins";
+    font-size: 26px;
+}
+header {
+    width: 70%;
+    height: 50px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+header h1 {
+    font-family: "Poppins";
+    color: hsl(221, 100%, 44%);
+}
+header li {
+    font-family: "Geologica";
+    list-style-type: none;
 
+}
+.s-head {
+    width: 100%;
+    height: 60px;
+    background: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Cairo";
+    font-size: 26px;
+    position: absolute;
+    top: 0;
+}
+.ans {
+    width: 60%;
+    border: none;
+    outline: none;
+    border-top: 3px solid hsl(221, 100%, 44%);
+    border-bottom: 3px solid hsl(221, 100%, 44%);
+    font-family: "Inter";
+    font-size: 30px;
+    margin-top: 25%;
+    margin-left: 20%;
+    padding: 10px;
+    text-align: center;
+}
+#false {
+    color: red;
+}
+#true {
+    color: green;
+}
+#progress {
+    color: hsl(221, 100%, 44%);
+}
 @media screen and (max-width: 700px) {
     .story {
         width: 80%;
